@@ -4,63 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stefan Vujakovic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header / Navigation -->
-    <div class="header">
-        <img src="photos/fiverrpfp.png" alt="Profile photo" class="pfp">
-            <button id="menu-button">MENU</button>
-                <ul>
-                    <li><a href="#about" class="link">About Me</a></li>
-                    <li><a href="#projects" class="link">My Projects</a></li>
-                    <li><a href="#contact" class="link">Contact Me</a></li>
-                </ul>
-    </div>
+    <header class="site-header">
+        <div class="brand">
+            <img src="photos/fiverrpfp.png" alt="Profile photo" class="pfp">
+            <span class="brand-name">Stefan Vujakovic</span>
+        </div>
+        <button id="menu-button" class="menu-button" type="button">MENU</button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><button class="nav-btn" type="button" data-target="about">About Me</button></li>
+                <li><button class="nav-btn" type="button" data-target="projects">My Projects</button></li>
+                <li><button class="nav-btn" type="button" data-target="contact">Contact Me</button></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- About Me Section -->
-    <section class="about_me" id="about">
-        <h1 class="about">About Me</h1>
-        <img src="photos/fiverrpfp.png" alt="Profile photo" class="about_photo">
-        <p class="about_text">
-            Hello, I am Stefan (Stefan Vujakk on Fiverr). I'm a beginner programmer learning web development and building small projects to improve my skills.
-        </p>
-        <p class="about_text">My current skills are: HTML, CSS, and starting to learn JavaScript.</p>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects-section">
-        <h1 class="project_header">Projects</h1>
-        <div class="projects-wrapper">
-            <button id="left-btn"><i class="arrow"><</i></button>
-            <div class="projects">
-                <div class="project">
-                    <p>placeholder until I make a new project</p>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Beginner Web Developer</p>
+                <h1>Building my skills, one project at a time.</h1>
+                <p class="lead">Hello, I am Stefan (Stefan Vujakk on Fiverr). I'm a beginner programmer learning web development and building small projects to improve my skills.</p>
+                <div class="hero-actions">
+                    <button class="btn primary" type="button" data-target="projects">See My Projects</button>
+                    <button class="btn ghost" type="button" data-target="contact">Contact Me</button>
                 </div>
             </div>
-            <button id="right-btn"><i class="arrow">></i></button>
-        </div>
-    </section>
+            <div class="hero-card">
+                <img src="photos/fiverrpfp.png" alt="Profile photo" class="hero-photo">
+                <div class="hero-card-text">
+                    <p class="hero-name">Stefan Vujakovic</p>
+                    <p class="hero-skill">Current skills: HTML, CSS, and starting to learn JavaScript.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h1 class="contacts">Contact Me</h1>
-        <p>
-            <a href="https://www.fiverr.com/stefan_vujakk" class="fiverr_link" target="_blank">
-                You can find me on Fiverr.
-            </a>
-        </p>
-        <p>
-            <a class="contact_link" href="https://mail.google.com/mail/?view=cm&fs=1&to=stefanvujakk.business@outlook.com" target="_blank">
-                Feel free to ask me anything about my projects via email.
-            </a>
-        </p>
-        <p>
-            <a class="contact_link" href="https://github.com/stefanvujakk" target="_blank">
-                I will also be sharing code for my projects on my GitHub.
-            </a>
-        </p>
-    </section>
+        <!-- About Me Section -->
+        <section class="section about_me" id="about">
+            <div class="section-header">
+                <p class="section-kicker">About Me</p>
+                <h2>Focused on learning, shipping, improving.</h2>
+            </div>
+            <div class="about-grid">
+                <img src="photos/fiverrpfp.png" alt="Profile photo" class="about_photo">
+                <div>
+                    <p class="about_text">
+                        Hello, I am Stefan (Stefan Vujakk on Fiverr). I'm a beginner programmer learning web development and building small projects to improve my skills.
+                    </p>
+                    <p class="about_text">My current skills are: HTML, CSS, and starting to learn JavaScript.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects-section" id="projects">
+            <div class="section-header">
+                <p class="section-kicker">Projects</p>
+                <h2>Small builds, big progress.</h2>
+            </div>
+            <div class="projects-wrapper">
+                <button id="left-btn" class="nav-arrow" type="button" aria-label="Previous project">&larr;</button>
+                <div class="projects">
+                    <div class="project">
+                        <p class="project-title">Placeholder Project</p>
+                        <p class="project-desc">Placeholder until I make a new project.</p>
+                        <div class="project-meta">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="right-btn" class="nav-arrow" type="button" aria-label="Next project">&rarr;</button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="section-header">
+                <p class="section-kicker">Contact Me</p>
+                <h2>Let’s connect and talk projects.</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Fiverr</h3>
+                    <p>You can find me on Fiverr.</p>
+                    <button class="btn primary" type="button" data-url="https://www.fiverr.com/stefan_vujakk">Open Fiverr</button>
+                </div>
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p>Feel free to ask me anything about my projects via email.</p>
+                    <button class="btn primary" type="button" data-url="https://mail.google.com/mail/?view=cm&fs=1&to=stefanvujakk.business@outlook.com">Send Email</button>
+                </div>
+                <div class="contact-card">
+                    <h3>GitHub</h3>
+                    <p>I will also be sharing code for my projects on my GitHub.</p>
+                    <button class="btn primary" type="button" data-url="https://github.com/stefanvujakk">View GitHub</button>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

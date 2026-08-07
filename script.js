@@ -1,43 +1,60 @@
-document.querySelector('#menu-button').addEventListener('click', () => {
-    let menu = document.querySelector('.header ul');
-    let btn = document.querySelector('#menu-button');
+const menuButton = document.querySelector('#menu-button');
+const navList = document.querySelector('.nav-list');
 
-    if(btn.innerText === 'MENU') {
-        menu.style.display = 'block';
-        btn.innerText = 'CLOSE'
-    } else {
-        menu.style.display = 'none';
-        btn.innerText = 'MENU';
-    }
+menuButton.addEventListener('click', () => {
+    navList.classList.toggle('open');
+    menuButton.innerText = navList.classList.contains('open') ? 'CLOSE' : 'MENU';
 });
 
-let projects = document.querySelectorAll('.projects .project');
+document.querySelectorAll('[data-target]').forEach((button) => {
+    button.addEventListener('click', () => {
+        const targetId = button.getAttribute('data-target');
+        const target = document.getElementById(targetId);
+
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            navList.classList.remove('open');
+            menuButton.innerText = 'MENU';
+        }
+    });
+});
+
+document.querySelectorAll('[data-url]').forEach((button) => {
+    button.addEventListener('click', () => {
+        const url = button.getAttribute('data-url');
+        if (url) {
+            window.open(url, '_blank', 'noopener');
+        }
+    });
+});
+
+const projects = document.querySelectorAll('.projects .project');
 let proNum = 0;
+
+const displayNone = () => {
+    projects.forEach((project) => {
+        project.style.display = 'none';
+    });
+};
 
 document.querySelector('#right-btn').addEventListener('click', () => {
     displayNone();
-    proNum++
+    proNum += 1;
 
-    if(proNum === projects.length) {
+    if (proNum === projects.length) {
         proNum = 0;
-    };
+    }
 
     projects[proNum].style.display = 'block';
 });
 
 document.querySelector('#left-btn').addEventListener('click', () => {
     displayNone();
-    proNum--
+    proNum -= 1;
 
-    if(proNum === -1) {
-        proNum = pictures.length -1;
+    if (proNum < 0) {
+        proNum = projects.length - 1;
     }
 
     projects[proNum].style.display = 'block';
 });
-
-const displayNone = () => {
-    projects.forEach((pro) => {
-        pro.style.display = 'none'
-    })
-}
